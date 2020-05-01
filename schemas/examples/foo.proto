@@ -1,0 +1,14 @@
+syntax = "proto3";
+package examples.foo;
+option go_package = "github.com/yolocs/ce-proto/pkg/eventtypes/examples";
+
+import "schemas/extensions/options.proto";
+
+message Foo {
+  option (cloudevents.options.transport_encoding) = "PROTO";
+  option (cloudevents.options.event_subject) = "foo-subject";
+
+  string bar_val = 1 [(cloudevents.options.ce_extension) = true];
+
+  string other_data = 2;
+}

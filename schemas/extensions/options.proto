@@ -1,0 +1,16 @@
+syntax = "proto3";
+package cloudevents.options;
+option go_package = "github.com/yolocs/ce-proto/pkg/eventtypes/options";
+
+import "google/protobuf/descriptor.proto";
+
+extend google.protobuf.MessageOptions {
+  string transport_encoding = 80001;
+  string event_source = 80002;
+  string event_subject = 80003;
+  string event_type = 80004;
+}
+
+extend google.protobuf.FieldOptions {
+  bool ce_extension = 80002;
+}

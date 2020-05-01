@@ -1,0 +1,19 @@
+syntax = "proto3";
+package com.example.samplesvc;
+option go_package = "github.com/yolocs/ce-proto/pkg/eventtypes/examples";
+
+import "schemas/extensions/options.proto";
+
+message FileUploadedEvent {
+  option (cloudevents.options.transport_encoding) = "PROTO";
+  string name = 1;
+  string path = 2;
+  string ext = 3 [(cloudevents.options.ce_extension) = true];
+}
+
+message PaymentReceivedEvent {
+  option (cloudevents.options.transport_encoding) = "PROTO";
+  string user = 1 [(cloudevents.options.ce_extension) = true];
+  string user_group = 2 [(cloudevents.options.ce_extension) = true];
+  string amount = 3;
+}
