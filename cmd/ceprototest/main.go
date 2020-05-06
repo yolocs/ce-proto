@@ -39,34 +39,39 @@ func main() {
 
 	// Output
 
-	// 2020/05/01 21:57:56 File upload event: Validation: valid
+	// 2020/05/06 21:10:10 File upload event: Validation: valid
 	// Context Attributes,
 	// 	specversion: 1.0
 	// 	type: com.example.samplesvc.FileUploadedEvent
 	// 	source: com.example.samplesvc
 	// 	subject: com.example.samplesvc.FileUploadedEvent
-	// 	id: 01ffbef3-89e8-40a9-9212-f10ce24e4971
-	// 	datacontenttype: application/octet-stream
+	// 	id: f5c3f979-c822-47f3-aec4-724180a45230
+	// 	datacontenttype: application/json
 	// Extensions,
 	// 	ext: txt
 	// Data (binary),
+	// 	{
+	// 		"name": "sample.txt",
+	// 		"path": "/folder/foo",
+	// 		"ext": "txt"
+	// 	}
 
-	// sample.txt
-	// 					/folder/footxt
-
-	// 2020/05/01 21:57:56 Paymend received event: Validation: valid
+	// 2020/05/06 21:10:10 Paymend received event: Validation: valid
 	// Context Attributes,
 	// 	specversion: 1.0
 	// 	type: com.example.samplesvc.PaymentReceivedEvent
 	// 	source: com.example.samplesvc
 	// 	subject: com.example.samplesvc.PaymentReceivedEvent
-	// 	id: c5d14874-f33b-4069-8898-a0b3470987a7
-	// 	datacontenttype: application/octet-stream
+	// 	id: b5dfc798-7021-44ca-aa10-1d687bcdc50e
+	// 	datacontenttype: application/json
 	// Extensions,
 	// 	user: user1
 	// 	usergroup: ceprototesters
 	// Data (binary),
-
-	// user1ceprototesters$100
+	// 	{
+	// 		"user": "user1",
+	// 		"userGroup": "ceprototesters",
+	// 		"amount": "$100"
+	// 	}
 
 }
