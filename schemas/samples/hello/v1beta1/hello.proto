@@ -1,0 +1,13 @@
+syntax = "proto3";
+package sample.hello.v1beta1;
+option go_package = "github.com/yolocs/ce-proto/pkg/eventtypes/samples/hello/v1beta1";
+
+import "schemas/extensions/options.proto";
+
+message Hello {
+  // This is also the default encoding.
+  option (cloudevents.options.transport_encoding) = "JSON";
+  string greeting_word = 1;
+  string greeting_target = 2;
+  int32 greeting_times = 3;
+}
