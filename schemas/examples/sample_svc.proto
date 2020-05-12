@@ -4,6 +4,8 @@ option go_package = "github.com/yolocs/ce-proto/pkg/eventtypes/examples";
 
 import "schemas/extensions/options.proto";
 
+// Generate with command protoc --go_out=$GOPATH/src
+// ./schemas/examples/sample_svc.proto
 message FileUploadedEvent {
   // This is also the default encoding.
   option (cloudevents.options.transport_encoding) = "JSON";

@@ -4,6 +4,8 @@ option go_package = "github.com/yolocs/ce-proto/pkg/eventtypes/samples/hello/v1b
 
 import "schemas/extensions/options.proto";
 
+// Generate with command protoc --go_out=$GOPATH/src
+// ./schemas/samples/hello/v1beta1/hello.proto
 message Hello {
   // This is also the default encoding.
   option (cloudevents.options.transport_encoding) = "JSON";

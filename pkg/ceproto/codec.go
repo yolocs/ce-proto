@@ -11,6 +11,11 @@ import (
 	"google.golang.org/protobuf/reflect/protoreflect"
 )
 
+var jsonDecodeOptions = protojson.UnmarshalOptions{
+	DiscardUnknown: true,
+	AllowPartial:   true,
+}
+
 func Marshal(msg proto.Message, event *event.Event) error {
 	if err := setData(msg, event); err != nil {
 		return err
@@ -21,7 +26,7 @@ func Marshal(msg proto.Message, event *event.Event) error {
 func Unmarshal(event *event.Event, msg proto.Message) error {
 	switch event.DataContentType() {
 	case "application/json":
-		return protojson.Unmarshal(event.Data(), msg)
+		return jsonDecodeOptions.Unmarshal(event.Data(), msg)
 	case "application/octet-stream":
 		return proto.Unmarshal(event.Data(), msg)
 	}
