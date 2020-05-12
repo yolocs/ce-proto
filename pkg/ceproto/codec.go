@@ -16,6 +16,11 @@ var jsonDecodeOptions = protojson.UnmarshalOptions{
 	AllowPartial:   true,
 }
 
+var protoDecodeOptions = proto.UnmarshalOptions{
+	AllowPartial:   true,
+	DiscardUnknown: true,
+}
+
 func Marshal(msg proto.Message, event *event.Event) error {
 	if err := setData(msg, event); err != nil {
 		return err
@@ -28,7 +33,7 @@ func Unmarshal(event *event.Event, msg proto.Message) error {
 	case "application/json":
 		return jsonDecodeOptions.Unmarshal(event.Data(), msg)
 	case "application/octet-stream":
-		return proto.Unmarshal(event.Data(), msg)
+		return protoDecodeOptions.Unmarshal(event.Data(), msg)
 	}
 	return fmt.Errorf("content type %s not supported", event.DataContentType())
 }
