@@ -38,4 +38,25 @@ func main() {
 		os.Exit(1)
 	}
 	log.Printf("Hello (v1beta1) received: %s\n", helloReceived2.String())
+
+	// Output
+
+	// 2020/05/12 16:57:40 Hello (v1beta1) sent: greeting_word:"hello"  greeting_target:"Chen"  greeting_times:3
+	// 2020/05/12 16:57:40 CloudEvent sent: Validation: valid
+	// Context Attributes,
+	// 	specversion: 1.0
+	// 	type: sample.hello.v1beta1.Hello
+	// 	source: sample.hello.v1beta1
+	// 	subject: sample.hello.v1beta1.Hello
+	// 	id: 9d5b58a9-0a53-40b6-baf3-ad63bdca53c5
+	// 	datacontenttype: application/json
+	// Data (binary),
+	// 	{
+	// 		"greetingWord": "hello",
+	// 		"greetingTarget": "Chen",
+	// 		"greetingTimes": 3
+	// 	}
+
+	// 2020/05/12 16:57:40 Hello (v1alpha1) received: greeting_word:"hello"  greeting_target:"Chen"
+	// 2020/05/12 16:57:40 Hello (v1beta1) received: greeting_word:"hello"  greeting_target:"Chen"  greeting_times:3
 }
